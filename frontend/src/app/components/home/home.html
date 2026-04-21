@@ -1,0 +1,49 @@
+<div class="page">
+
+  <div class="glass-card main-card">
+
+    <h1>🔗 URL Shortener</h1>
+    <p class="subtitle">
+      Fast • Smart • Analytics Powered
+    </p>
+
+    <input
+      [(ngModel)]="originalUrl"
+      placeholder="Paste your long URL here..."
+      class="url-input">
+
+    <button
+      class="primary-btn"
+      (click)="shorten()">
+      Generate Short URL
+    </button>
+
+    <div *ngIf="shortUrl" class="result-box">
+
+      <span>{{shortUrl}}</span>
+
+      <button
+        class="copy-btn"
+        (click)="copyLink()">
+        Copy
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="stats-grid">
+
+    <div class="glass-card stat">
+      <h3>Total URLs</h3>
+      <h2>{{totalUrls}}</h2>
+    </div>
+
+    <div class="glass-card stat">
+      <h3>Total Clicks</h3>
+      <h2>{{totalClicks}}</h2>
+    </div>
+
+  </div>
+
+</div>
